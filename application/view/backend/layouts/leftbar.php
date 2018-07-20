@@ -11,6 +11,7 @@
 
     <ul class="sidebar-menu">
         <li><a href="index.php?c=sinhvien"><i class="fa fa-dashboard"></i> <span>Quản lý sinh viên</span></a></li>
+        <li><a href="index.php?c=hopdong"><i class="fa fa-folder"></i> <span>Quản lý hợp đồng</span></a></li>
         <li><a href="index.php?c=phong"><i class="fa fa-folder"></i> <span>Quản lý phòng</span></a></li>
         <li><a href="index.php?c=khunha"><i class="fa fa-file"></i> <span>Quản lý khu nhà</span></a></li>
         <li><a href="index.php?c=user"><i class="fa fa-user"></i> <span>Quản lý user</span></a></li>

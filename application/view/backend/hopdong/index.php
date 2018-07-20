@@ -17,11 +17,11 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1 class="pull-left">
-                Quản lý sinh viên
-                <small>Danh sách sinh viên</small>
+                Quản lý hợp đồng
+                <small>Danh sách hợp đồng</small>
             </h1>
             <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" onclick="add()">
-                Thêm sinh viên
+                Thêm hợp đồng
             </button>
         </section>
         <section class="content">
@@ -45,24 +45,30 @@
                         <div class="box-body">
                             <table class="table table-bordered">
                                 <tr>
-                                    <th width="100px">Mã SV</th>
                                     <th>Họ tên</th>
-                                    <th>Lớp</th>
-                                    <th>Giới tính</th>
-                                    <th>Số ĐT</th>
+                                    <th>Phòng</th>
+                                    <th>Ngày bắt đầu</th>
+                                    <th>Ngày kết thúc</th>
                                     <th class="text-center" width="200px">Chức năng</th>
                                 </tr>
-                                <?php foreach ($listSV as $sv): ?>
+                                <?php foreach ($listHD as $hd): ?>
                                 <tr>
-                                    <td><?php echo $sv['MaSV']; ?></td>
+                                    <?php foreach ($listSV as $sv):
+                                        if ($sv['MaSV'] == $hd['MaSV']) { ?>
                                     <td><?php echo $sv['TenSV']; ?></td>
-                                    <td><?php echo $sv['Lop']; ?></td>
-                                    <td><?php echo $sv['GioiTinh']; ?></td>
-                                    <td><?php echo $sv['SDT']; ?></td>
+                                    <?php }
+                                    endforeach; ?>
+                                    <?php foreach ($listPhong as $phong):
+                                        if ($phong['id'] == $hd['idPhong']) { ?>
+                                            <td><?php echo $phong['TenPhong']; ?></td>
+                                        <?php }
+                                    endforeach; ?>
+                                    <td><?php echo $hd['NgayBatDau']; ?></td>
+                                    <td><?php echo $hd['NgayKetThuc']; ?></td>
                                     <td class="text-center">
                                       <div class="btn-group">
-                                          <a onclick="edit(<?php echo $sv['MaSV'] ?>)" href="#" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-edit"></i> Edit</a>
-                                          <a href="index.php?c=sinhvien&a=delete&id=<?php echo $sv['MaSV']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+                                          <a onclick="edit(<?php echo $hd['id'] ?>)" href="#" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-edit"></i> Edit</a>
+                                          <a href="index.php?c=hopdong&a=delete&id=<?php echo $hd['id']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
                                       </div>
                                   </td>
                                 </tr>
