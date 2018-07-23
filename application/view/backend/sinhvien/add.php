@@ -53,8 +53,8 @@
                         <!-- Name Field -->
                         <div class="col-sm-6">
                             <label for="gioiTinh">Giới tính:</label> <br>
-                            <input type="radio" class="radio-inline" name="GioiTinh" id="gioiTinh" value="Nam" checked> Nam
-                            <input type="radio" class="radio-inline" name="GioiTinh" id="gioiTinh" value="Nữ"> Nữ
+                            <input type="radio" class="radio-inline" name="GioiTinh" value="Nam" checked> Nam
+                            <input type="radio" class="radio-inline" name="GioiTinh" value="Nữ"> Nữ
                         </div>
                         <div class="col-sm-6">
                             <label for="soDT">Điện thoại:</label>

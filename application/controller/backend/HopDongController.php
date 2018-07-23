@@ -18,4 +18,36 @@ class HopDongController extends BaseController
         $this->view->load('/backend/hopdong/index', $data);
         $this->view->show();
     }
+
+    public function add()
+    {
+        $listPhong = Phong::getPhongTrong();
+        $listSV    = SinhVien::getAll();
+        $data = [
+            'listSV'    => $listSV,
+            'listPhong' => $listPhong,
+        ];
+        $this->view->load('backend/hopdong/add', $data);
+        $this->view->show();
+    }
+
+    public function save()
+    {
+        $request = $_POST;
+        $id = $_GET['id'];
+        if ($id != null) {
+
+        } else {
+            $request['NgayTao'] = date('Y-m-d');
+            if (HopDong::insert($request)) {
+                $_SESSION['success'] = 'Thêm mới thành công';
+                header('location:index.php?c=hopdong');
+                exit();
+            } else {
+                $_SESSION['danger'] = 'Thêm mới không thành công';
+                header('location:index.php?c=hopdong');
+                exit();
+            }
+        }
+    }
 }

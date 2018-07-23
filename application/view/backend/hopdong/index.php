@@ -89,7 +89,7 @@
     <script>
         function edit(id) {
             $.ajax({
-                url: 'index.php?c=sinhvien&a=edit',
+                url: 'index.php?c=hopdong&a=edit',
                 type: 'get',
                 data:{id: id},
                 success:function(result){
@@ -99,7 +99,7 @@
         }
         function add() {
             $.ajax({
-                url: 'index.php?c=sinhvien&a=add',
+                url: 'index.php?c=hopdong&a=add',
                 type: 'get',
                 data:{id: null},
                 success:function(result){

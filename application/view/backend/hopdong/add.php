@@ -6,81 +6,46 @@
         </div>
         <div class="modal-body">
             <div class="row">
-                <form method="POST" action="index.php?c=sinhvien&a=save" accept-charset="UTF-8" id="Post">
+                <form method="POST" action="index.php?c=hopdong&a=save" accept-charset="UTF-8" id="Post">
                     <input name="_token" type="hidden" value="OevXx559CuCb66T2XiTa8j6eDn8nV0L7YiVgXGn7">
 
                     <div class="form-group">
                         <!-- Name Field -->
-                        <div class="col-sm-6">
-                            <label for="MaSV">Mã sinh viên:</label>
-                            <input class="form-control" name="MaSV" type="text" id="MaSV" value="" placeholder="Mã sinh viên">
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="lop">Lớp:</label>
-                            <input class="form-control" name="lop" type="text" id="lop" value="" placeholder="Lớp">
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="form-group">
-                        <!-- Name Field -->
-                        <div class="col-sm-6">
-                            <label for="password">Mật khẩu:</label>
-                            <input class="form-control" name="password" type="password" id="password" value="" placeholder="Password">
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="re_password">Nhập lại mật khẩu:</label>
-                            <input class="form-control" name="re_password" type="password" id="re_password" value="" placeholder="Password">
+                        <div class="col-sm-12">
+                            <label for="MaSV">Sinh viên:</label><br>
+                            <select name="MaSV" id="MaSV" class="MySelect2" style="width: 100%;">
+                                <option value="0">Sinh viên</option>
+                                <?php foreach ($listSV as $sinhVien) : ?>
+                                    <option value="<?php echo $sinhVien['MaSV'] ?>"><?php echo $sinhVien['TenSV'].' ('.$sinhVien['MaSV'].')' ?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                         <div class="clearfix"></div>
                     </div>
                     <div class="form-group">
                         <!-- Name Field -->
                         <div class="col-sm-12">
-                            <label for="TenSV">Tên sinh viên:</label>
-                            <input class="form-control" name="TenSV" type="text" id="TenSv" value="" placeholder="Tên sinh viên">
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="form-group">
-                        <!-- Name Field -->
-                        <div class="col-sm-12">
-                            <label for="email">Email:</label>
-                            <input class="form-control" name="email" type="email" id="email" value="" placeholder="Email">
+                            <label for="MaSV">Phong:</label><br>
+                            <select name="idPhong" id="idPhong" class="MySelect2" style="width: 100%;">
+                                <?php foreach ($listPhong as $phong) : ?>
+                                    <option value="<?php echo $phong['id'] ?>"><?php echo $phong['TenPhong'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                         <div class="clearfix"></div>
                     </div>
                     <div class="form-group">
                         <!-- Name Field -->
                         <div class="col-sm-6">
-                            <label for="gioiTinh">Giới tính:</label> <br>
-                            <input type="radio" class="radio-inline" name="GioiTinh" id="gioiTinh" value="Nam" checked> Nam
-                            <input type="radio" class="radio-inline" name="GioiTinh" id="gioiTinh" value="Nữ"> Nữ
+                            <label for="email">Ngày bắt đầu:</label>
+                            <input class="form-control" name="NgayBatDau" type="date" value="" placeholder="">
                         </div>
                         <div class="col-sm-6">
-                            <label for="soDT">Điện thoại:</label>
-                            <input class="form-control" name="SDT" type="text" id="soDT" value="" placeholder="Điện thoại">
+                            <label for="email">Ngày kết thúc:</label>
+                            <input class="form-control" name="NgayKetThuc" type="date" value="" placeholder="">
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <label for="queQuan">Quê quán: </label>
-                            <input class="form-control" name="QueQuan" type="text" id="queQuan" value="" placeholder="Quê quán">
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-<!--                    <div class="form-group">-->
-<!--                        <div class="col-sm-12">-->
-<!--                            <label for="IdPhong">Phòng</label>-->
-<!--                            <select class="form-control" name="IdPhong">-->
-<!--                                <option>Chọn phòng</option>-->
-<!--                                --><?php //foreach ($listPhong as $phong): ?>
-<!--                                    <option value="--><?php //echo $phong['id'] ?><!--">--><?php //echo $phong['TenPhong'] ?><!-- (Còn trống --><?php //echo $phong['SoSV'] - $phong['DaO'] ?><!--)</option>-->
-<!--                                --><?php //endforeach; ?>
-<!--                            </select>-->
-<!--                        </div>-->
-<!--                        <div class="clearfix"></div>-->
-<!--                    </div>-->
                     <div class="form-group">
                         <!-- Submit Field -->
                         <div class="col-sm-12">
@@ -94,3 +59,6 @@
         </div>
     </div>
 </div>
+<script>
+    $('.MySelect2').select2();
+</script>

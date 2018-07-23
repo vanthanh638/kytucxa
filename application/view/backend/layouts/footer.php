@@ -7,5 +7,6 @@
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/app.min.js"></script>
+<script src="js/select2.min.js"></script>
 </body>
 </html>
