@@ -6,7 +6,8 @@
         </div>
         <div class="modal-body">
             <div class="row">
-                <form method="POST" action="index.php?c=sinhvien&a=save&id=<?php echo $sinhVien['MaSV'] ?>" accept-charset="UTF-8" id="Post">
+                <form method="POST" action="index.php?c=sinhvien&a=save&id=<?php echo $sinhVien['MaSV'] ?>"
+                      accept-charset="UTF-8" id="Post" enctype="multipart/form-data">
                     <input name="_token" type="hidden" value="OevXx559CuCb66T2XiTa8j6eDn8nV0L7YiVgXGn7">
 
                     <div class="form-group">
@@ -59,9 +60,9 @@
                         <!-- Name Field -->
                         <div class="col-sm-6">
                             <label for="gioiTinh">Giới tính:</label> <br>
-                            <input type="radio" class="radio-inline" name="GioiTinh" id="gioiTinh" value="Nam"
+                            <input type="radio" class="radio-inline" name="GioiTinh" value="Nam"
                                    <?php if ($sinhVien['GioiTinh'] == 'Nam') {?>checked <?php } ?>> Nam
-                            <input type="radio" class="radio-inline" name="GioiTinh" id="gioiTinh" value="Nữ"
+                            <input type="radio" class="radio-inline" name="GioiTinh" value="Nữ"
                                    <?php if ($sinhVien['GioiTinh'] == 'Nữ') {?>checked <?php } ?>> Nữ
                         </div>
                         <div class="col-sm-6">
@@ -79,18 +80,23 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <!--                    <div class="form-group">-->
-                    <!--                        <div class="col-sm-12">-->
-                    <!--                            <label for="IdPhong">Phòng</label>-->
-                    <!--                            <select class="form-control" name="IdPhong">-->
-                    <!--                                <option>Chọn phòng</option>-->
-                    <!--                                --><?php //foreach ($listPhong as $phong): ?>
-                    <!--                                    <option value="--><?php //echo $phong['id'] ?><!--">--><?php //echo $phong['TenPhong'] ?><!-- (Còn trống --><?php //echo $phong['SoSV'] - $phong['DaO'] ?><!--)</option>-->
-                    <!--                                --><?php //endforeach; ?>
-                    <!--                            </select>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="clearfix"></div>-->
-                    <!--                    </div>-->
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label for="avatar">Avatar: </label>
+                            <input class="form-control" name="avatar" type="file" onchange="viewImg(this)">
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <?php if ($sinhVien['avatar'] != '') { ?>
+                            <img src="../images/avatar/<?php echo $sinhVien['avatar'] ?>" height="150px" id="avartar-img-show">
+                            <?php } else { ?>
+                            <img src="../images/avatar/human.png" height="150px" id="avartar-img-show">
+                            <?php } ?>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
                     <div class="form-group">
                         <!-- Submit Field -->
                         <div class="col-sm-12">
@@ -104,3 +110,13 @@
         </div>
     </div>
 </div>
+<script>
+    function viewImg(img) {
+        var fileReader = new FileReader;
+        fileReader.onload = function(img) {
+            var avartarShow = document.getElementById("avartar-img-show");
+
+            avartarShow.src = img.target.result
+        }, fileReader.readAsDataURL(img.files[0])
+    }
+</script>

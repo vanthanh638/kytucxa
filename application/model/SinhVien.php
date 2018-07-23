@@ -7,8 +7,8 @@ class SinhVien extends Model
     {
         $listSV = [];
         $conn = Model::getInstance();
-        $sttm = $conn->query('SELECT * FROM sinhvien ORDER BY TenSV DESC');
-        foreach ($sttm->fetchAll() as $sinhVien) {
+        $stmt = $conn->query('SELECT * FROM sinhvien ORDER BY TenSV DESC');
+        foreach ($stmt->fetchAll() as $sinhVien) {
             $listSV[] = $sinhVien;
         }
         return $listSV;
@@ -17,7 +17,7 @@ class SinhVien extends Model
     public static function insert($request)
     {
         $conn = Model::getInstance();
-        $sttm = $conn->prepare('INSERT INTO sinhvien(MaSV, password, TenSV, Lop, Email, GioiTinh, SDT, QueQuan, IdPhong) VALUES (:MaSV, :password, :TenSV, :Lop, :Email, :GioiTinh, :SDT, :QueQuan, :IdPhong)');
+        $stmt = $conn->prepare('INSERT INTO sinhvien(MaSV, password, TenSV, Lop, Email, GioiTinh, SDT, QueQuan, IdPhong, avatar) VALUES (:MaSV, :password, :TenSV, :Lop, :Email, :GioiTinh, :SDT, :QueQuan, :IdPhong, :avatar)');
         $data = [
             'MaSV' => $request['MaSV'],
             'password' => $request['password'],
@@ -28,22 +28,23 @@ class SinhVien extends Model
             'SDT'      => $request['SDT'],
             'QueQuan'  => $request['QueQuan'],
             'IdPhong'  => $request['IdPhong'],
+            'avatar'  => $request['avatar'],
         ];
-        return $sttm->execute($data);
+        return $stmt->execute($data);
     }
 
     public static function getById($maSV)
     {
         $conn = Model::getInstance();
-        $sttm = $conn->query("SELECT * FROM sinhvien WHERE MaSV = $maSV");
-        return $sttm->fetch();
+        $stmt = $conn->query("SELECT * FROM sinhvien WHERE MaSV = $maSV");
+        return $stmt->fetch();
     }
 
     public static function checkExist($maSV)
     {
         $conn = Model::getInstance();
-        $sttm = $conn->query("SELECT * FROM sinhvien WHERE MaSV = $maSV");
-        $result = $sttm->fetch();
+        $stmt = $conn->query("SELECT * FROM sinhvien WHERE MaSV = $maSV");
+        $result = $stmt->fetch();
         if ($result !== false) {
             return true;
         } else {
@@ -57,7 +58,7 @@ class SinhVien extends Model
             $request['password'] = self::getById($request['MaSV']);
         }
         $conn = Model::getInstance();
-        $sttm = $conn->prepare('UPDATE sinhvien SET password = :password, TenSV = :TenSV, Lop = :Lop, Email = :Email, GioiTinh = :GioiTinh, SDT = :SDT, QueQuan = :QueQuan WHERE MaSV = :MaSV');
+        $stmt = $conn->prepare('UPDATE sinhvien SET password = :password, TenSV = :TenSV, Lop = :Lop, Email = :Email, GioiTinh = :GioiTinh, SDT = :SDT, QueQuan = :QueQuan, avatar = :avatar WHERE MaSV = :MaSV');
         $data = [
             'MaSV' => $request['MaSV'],
             'password' => $request['password'],
@@ -67,14 +68,23 @@ class SinhVien extends Model
             'GioiTinh' => $request['GioiTinh'],
             'SDT'      => $request['SDT'],
             'QueQuan'  => $request['QueQuan'],
+            'avatar'   => $request['avatar'],
         ];
-        return $sttm->execute($data);
+        return $stmt->execute($data);
     }
 
     public static function delete($maSV)
     {
         $conn = Model::getInstance();
-        $sttm = $conn->prepare("DELETE FROM sinhvien WHERE MaSV = $maSV");
-        return $sttm->execute();
+        $stmt = $conn->prepare("DELETE FROM sinhvien WHERE MaSV = $maSV");
+        return $stmt->execute();
+    }
+
+    public static function updatePhong($MaSV, $idPhong)
+    {
+        $conn = Model::getInstance();
+        $sql = "UPDATE sinhvien SET IdPhong = $idPhong WHERE MaSV = $MaSV";
+        $stmt = $conn->prepare($sql);
+        return $stmt->execute();
     }
 }

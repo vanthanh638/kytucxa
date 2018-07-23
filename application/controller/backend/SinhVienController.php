@@ -68,6 +68,13 @@ class SinhVienController extends BaseController
         if ($id != null) {
             if (SinhVien::checkExist($id)) {
                 $request['MaSV'] = $id;
+                if ($_FILES['avatar']['name'] != '') {
+                    $this->library->load('file');
+                    $request['avatar'] = $this->library->file->upload('avatar');
+                    $this->library->file->deleteFile(SinhVien::getById($request['MaSV'])['avatar']);
+                } else {
+                    $request['avatar'] = '';
+                }
                 if (SinhVien::update($request)) {
                     $_SESSION['success'] = 'Sửa thành công';
                     header('location:index.php?c=sinhvien');
@@ -83,6 +90,15 @@ class SinhVienController extends BaseController
                 exit();
             }
         } else {
+//            if ($_FILES['avatar']['name'] != '') {
+//                $newName = time() . '_' .$_FILES['avatar']['name'];
+//                $pathFile = PATH_ROOT . '/images/avatar/'.$newName;
+//                if (move_uploaded_file($_FILES['avatar']['tmp_name'], $pathFile)) {
+//                    $request['avatar'] = $newName;
+//                } else {
+//                    $request['avatar'] = '';
+//                }
+//            }
             if (SinhVien::insert($request)) {
 //                Phong::updateDaO($request['IdPhong']);
                 $_SESSION['success'] = 'Thêm thành công';

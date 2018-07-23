@@ -7,8 +7,8 @@ class Phong extends Model
     {
         $listPhong = [];
         $conn = Model::getInstance();
-        $sttm = $conn->query('SELECT * FROM phong ORDER BY IdKhuNha');
-        foreach ($sttm->fetchAll() as $phong) {
+        $stmt = $conn->query('SELECT * FROM phong ORDER BY IdKhuNha');
+        foreach ($stmt->fetchAll() as $phong) {
             $listPhong[] = $phong;
         }
         return $listPhong;
@@ -17,21 +17,21 @@ class Phong extends Model
     public static function insert($request)
     {
         $conn = Model::getInstance();
-        $sttm = $conn->prepare('INSERT INTO phong(TenPhong, IdKhuNha, SoSV, DaO) VALUES (:tenPhong, :idKhuNha, :soSV, :daO)');
+        $stmt = $conn->prepare('INSERT INTO phong(TenPhong, IdKhuNha, SoSV, DaO) VALUES (:tenPhong, :idKhuNha, :soSV, :daO)');
         $data = [
             'tenPhong' => $request['TenPhong'],
             'idKhuNha' => $request['IdKhuNha'],
             'soSV'     => $request['SoSV'],
             'daO'      => 0,
         ];
-        return $sttm->execute($data);
+        return $stmt->execute($data);
     }
 
     public static function checkExist($id)
     {
         $conn = Model::getInstance();
-        $sttm = $conn->query("SELECT * FROM phong WHERE id = $id");
-        $result = $sttm->fetch();
+        $stmt = $conn->query("SELECT * FROM phong WHERE id = $id");
+        $result = $stmt->fetch();
         if ($result !== false) {
             return true;
         } else {
@@ -42,28 +42,28 @@ class Phong extends Model
     public static function GetById($id)
     {
         $conn = Model::getInstance();
-        $sttm = $conn->query("SELECT * FROM phong WHERE id = $id");
-        return $sttm->fetch();
+        $stmt = $conn->query("SELECT * FROM phong WHERE id = $id");
+        return $stmt->fetch();
     }
 
     public static function update($request)
     {
         $conn = Model::getInstance();
-        $sttm = $conn->prepare('UPDATE phong SET TenPhong = :tenPhong, IdKhuNha = :idKhuNha, SoSV = :soSV WHERE id = :id');
+        $stmt = $conn->prepare('UPDATE phong SET TenPhong = :tenPhong, IdKhuNha = :idKhuNha, SoSV = :soSV WHERE id = :id');
         $data = [
             'tenPhong' => $request['TenPhong'],
             'idKhuNha' => $request['IdKhuNha'],
             'soSV'     => $request['SoSV'],
             'id'       => $request['id'],
         ];
-        return $sttm->execute($data);
+        return $stmt->execute($data);
     }
 
     public static function delete($id)
     {
         $conn = Model::getInstance();
-        $sttm = $conn->prepare("DELETE FROM phong WHERE id = $id");
-        return $sttm->execute();
+        $stmt = $conn->prepare("DELETE FROM phong WHERE id = $id");
+        return $stmt->execute();
     }
 
     public static function getPhongTrong()
@@ -80,7 +80,7 @@ class Phong extends Model
     public static function updateDaO($IdPhong)
     {
         $conn = Model::getInstance();
-        $sttm = $conn->prepare("UPDATE phong SET DaO = DaO + 1 WHERE id = $IdPhong");
-        return $sttm->execute();
+        $stmt = $conn->prepare("UPDATE phong SET DaO = DaO + 1 WHERE id = $IdPhong");
+        return $stmt->execute();
     }
 }

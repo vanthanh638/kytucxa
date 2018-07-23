@@ -1,6 +1,6 @@
 <?php
 
-class File_Library {
+class FileLibrary {
 
     public function __construct() {
         
@@ -24,7 +24,7 @@ class File_Library {
     }
 
     public function deleteFile($name) {
-        $uploaddir = PATH_ROOT . '/avatar/';
+        $uploaddir = PATH_ROOT.'/images/avatar/';
         $fileUrl = $uploaddir . $name;
         unlink($fileUrl);
     }

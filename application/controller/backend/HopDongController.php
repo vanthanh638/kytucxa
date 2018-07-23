@@ -40,6 +40,7 @@ class HopDongController extends BaseController
         } else {
             $request['NgayTao'] = date('Y-m-d');
             if (HopDong::insert($request)) {
+                SinhVien::updatePhong($request['MaSV'], $request['idPhong']);
                 $_SESSION['success'] = 'Thêm mới thành công';
                 header('location:index.php?c=hopdong');
                 exit();
