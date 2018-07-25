@@ -87,4 +87,49 @@ class SinhVien extends Model
         $stmt = $conn->prepare($sql);
         return $stmt->execute();
     }
+
+    public static function search($request)
+    {
+        $conn = Model::getInstance();
+        $sql = "SELECT * FROM sinhvien WHERE TenSV LIKE :tenSV AND Lop LIKE :lop";
+        if ($request['masv'] != null) {
+            $masv = $request['masv'];
+            $sql." AND MaSV = $masv";
+        }
+
+        $stmt = $conn->prepare($sql);
+        $data = [
+            'tenSV' => '%'.$request['tensv'].'%',
+            'lop'   => '%'.$request['lop'].'%',
+        ];
+        $stmt->execute($data);
+        $listSV = [];
+        foreach ($stmt->fetchAll() as $sinhvien) {
+            $listSV[] = $sinhvien;
+        }
+        return $listSV;
+    }
+
+    public static function getCount()
+    {
+        $conn = Model::getInstance();
+        $stmt = $conn->query('SELECT COUNT(*) AS csv FROM sinhvien');
+        $result = $stmt->fetch();
+        return $result['csv'];
+    }
+
+    public static function getByPage($page)
+    {
+        $conn = Model::getInstance();
+        $start = ($page - 1) * PAGE_SIZE;
+        $limit = PAGE_SIZE;
+        $sql = "SELECT * FROM sinhvien ORDER BY TenSV DESC LIMIT $start, $limit";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $listSV = [];
+        foreach ($stmt->fetchAll() as $sinhvien) {
+            $listSV[] = $sinhvien;
+        }
+        return $listSV;
+    }
 }

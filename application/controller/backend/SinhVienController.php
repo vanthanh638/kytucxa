@@ -6,9 +6,16 @@ class SinhVienController extends BaseController
 {
     public function index()
     {
-        $listSV = SinhVien::getAll();
+        $page = empty($_GET['p']) ? 1 : $_GET['p'];
+        if ($page == '') {
+            $page = 1;
+        }
+        $cPage = ceil(SinhVien::getCount()/PAGE_SIZE);
+        $listSV = SinhVien::getByPage($page);
         $data = [
             'listSV' => $listSV,
+            'cPage'  => $cPage,
+            'page'   => $page,
         ];
         $this->view->load('/backend/sinhvien/index', $data);
         $this->view->show();
@@ -113,5 +120,16 @@ class SinhVienController extends BaseController
                 exit();
             }
         }
+    }
+    public function search()
+    {
+        $request = $_POST;
+        $listSV = SinhVien::search($request);
+        $data = [
+            'listSV' => $listSV,
+        ];
+        $data = array_merge($data, $this->data);
+        $this->view->load('/backend/sinhvien/list', $data);
+        $this->view->show();
     }
 }

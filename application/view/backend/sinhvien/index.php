@@ -16,16 +16,13 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            <h1 class="pull-left">
+            <h1 class="header">
                 Quản lý sinh viên
-                <small>Danh sách sinh viên</small>
             </h1>
-            <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" onclick="add()">
-                Thêm sinh viên
-            </button>
         </section>
         <section class="content">
             <div class="row">
+
                 <!-- Left col -->
                 <div class="col-md-12">
                     <?php
@@ -43,6 +40,34 @@
                     ?>
                     <div class="box">
                         <div class="box-body">
+                                <div class="form-group">
+                                    <div class="col-sm-2">
+                                        <label>Mã SV</label>
+                                        <input type="text" name="smasv" id="smasv" class="form-control">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label>Tên sinh viên</label>
+                                        <input type="text" name="stensv" id="stensv" class="form-control">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label>Lớp</label>
+                                        <input type="text" name="slop" id="slop" class="form-control">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label></label><br>
+                                        <button class="btn btn-primary pull-right" id="search">Tìm kiếm</button>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-body">
+                            <h4 class="pull-left">Danh sách sinh viên</h4>
+                            <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" onclick="add()">
+                                Thêm sinh viên
+                            </button>
+                        </div>
+                        <div class="box-body" id="list">
                             <?php if ($listSV == null) echo 'Danh sách trống';
                             else { ?>
                             <table class="table table-bordered">
@@ -71,7 +96,34 @@
                                 <?php endforeach; ?>
                             </table>
                             <?php } ?>
-                        </div><!-- /.box-body -->
+                            <?php if ($cPage > 1) { ?>
+                                <div>
+                                    <ul class="pagination pull-left">
+                                        <?php if ($page != 1) { ?>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                        <?php for ($i = 1; $i <= $cPage; $i++) { ?>
+                                            <li class="page-item <?php if ($i == $page) echo 'active' ?>"><a class="page-link" href="index.php?c=sinhvien&p=<?php echo $i ?>"><?php echo $i ?></a></li>
+                                        <?php } ?>
+                                        <!--                                <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+                                        <!--                                <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+                                        <?php if ($page != $cPage) { ?>
+                                            <li class="page-item">
+                                                <a class="page-link" href="index.php?c=sinhvien&p=<?php echo $page + 1 ?>" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            <?php } ?>
+                        </div><!-- /list -->
                     </div><!-- /.box -->
                 </div><!-- /.Left col -->
                 <!-- right col (We are only adding the ID to make the widgets sortable)-->
@@ -105,6 +157,28 @@
                 }
             });
         }
+        $(document).ready(function(){
+            $("#search").click(function() {
+                var masv = $('#smasv').val();
+                var tensv = $('#stensv').val();
+                var lop = $('#slop').val();
+                if (masv != '') {
+                    masv = parseInt(masv);
+                }
+                $.ajax({
+                    url: 'index.php?c=sinhvien&a=search',
+                    type: 'post',
+                    data:{
+                        masv: masv,
+                        tensv: tensv,
+                        lop: lop
+                    },
+                    success:function(result) {
+                        $("#list").html(result);
+                    }
+                });
+            });
+        });
     </script>
 
 <?php require_once(PATH_APPLICATION.'/view/backend/layouts/footer.php'); ?>
