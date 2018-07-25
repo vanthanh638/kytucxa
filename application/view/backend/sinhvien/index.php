@@ -43,6 +43,8 @@
                     ?>
                     <div class="box">
                         <div class="box-body">
+                            <?php if ($listSV == null) echo 'Danh sách trống';
+                            else { ?>
                             <table class="table table-bordered">
                                 <tr>
                                     <th width="100px">Mã SV</th>
@@ -68,6 +70,7 @@
                                 </tr>
                                 <?php endforeach; ?>
                             </table>
+                            <?php } ?>
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
                 </div><!-- /.Left col -->

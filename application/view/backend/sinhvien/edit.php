@@ -7,7 +7,7 @@
         <div class="modal-body">
             <div class="row">
                 <form method="POST" action="index.php?c=sinhvien&a=save&id=<?php echo $sinhVien['MaSV'] ?>"
-                      accept-charset="UTF-8" id="Post" enctype="multipart/form-data">
+                      accept-charset="UTF-8" enctype="multipart/form-data" id="form-sinhvien">
                     <input name="_token" type="hidden" value="OevXx559CuCb66T2XiTa8j6eDn8nV0L7YiVgXGn7">
 
                     <div class="form-group">
@@ -25,6 +25,13 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-default btn-sm" id="change-password">
+                                <span class="glyphicon glyphicon-pencil"></span> Đổi mật khẩu
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group" id="ip-pass" style="display: none;">
                         <!-- Name Field -->
                         <div class="col-sm-6">
                             <label for="password">Mật khẩu:</label>
@@ -111,12 +118,10 @@
     </div>
 </div>
 <script>
-    function viewImg(img) {
-        var fileReader = new FileReader;
-        fileReader.onload = function(img) {
-            var avartarShow = document.getElementById("avartar-img-show");
-
-            avartarShow.src = img.target.result
-        }, fileReader.readAsDataURL(img.files[0])
-    }
+    $(document).ready(function(){
+        $("#change-password").click(function() {
+            $("#ip-pass").toggle();
+        });
+    });
 </script>
+<script src="js/validate-form.js"></script>

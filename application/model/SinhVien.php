@@ -6,10 +6,13 @@ class SinhVien extends Model
     public static function getAll()
     {
         $listSV = [];
-        $conn = Model::getInstance();
-        $stmt = $conn->query('SELECT * FROM sinhvien ORDER BY TenSV DESC');
-        foreach ($stmt->fetchAll() as $sinhVien) {
-            $listSV[] = $sinhVien;
+        try {
+            $conn = Model::getInstance();
+            $stmt = $conn->query('SELECT * FROM sinhvien ORDER BY TenSV DESC');
+            foreach ($stmt->fetchAll() as $sinhVien) {
+                $listSV[] = $sinhVien;
+            }
+        } catch (PDOException $e) {
         }
         return $listSV;
     }
@@ -20,7 +23,7 @@ class SinhVien extends Model
         $stmt = $conn->prepare('INSERT INTO sinhvien(MaSV, password, TenSV, Lop, Email, GioiTinh, SDT, QueQuan, IdPhong, avatar) VALUES (:MaSV, :password, :TenSV, :Lop, :Email, :GioiTinh, :SDT, :QueQuan, :IdPhong, :avatar)');
         $data = [
             'MaSV' => $request['MaSV'],
-            'password' => $request['password'],
+            'password' => md5($request['password']),
             'TenSV'    => $request['TenSV'],
             'Lop'      =>$request['lop'],
             'Email'    => $request['email'],
@@ -54,9 +57,6 @@ class SinhVien extends Model
 
     public static function update($request)
     {
-        if ($request['password'] == '') {
-            $request['password'] = self::getById($request['MaSV']);
-        }
         $conn = Model::getInstance();
         $stmt = $conn->prepare('UPDATE sinhvien SET password = :password, TenSV = :TenSV, Lop = :Lop, Email = :Email, GioiTinh = :GioiTinh, SDT = :SDT, QueQuan = :QueQuan, avatar = :avatar WHERE MaSV = :MaSV');
         $data = [

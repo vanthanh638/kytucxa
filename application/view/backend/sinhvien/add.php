@@ -6,7 +6,7 @@
         </div>
         <div class="modal-body">
             <div class="row">
-                <form method="POST" action="index.php?c=sinhvien&a=save" accept-charset="UTF-8" id="Post"
+                <form method="POST" action="index.php?c=sinhvien&a=save" accept-charset="UTF-8" id="form-sinhvien"
                     enctype="multipart/form-data">
                     <input name="_token" type="hidden" value="OevXx559CuCb66T2XiTa8j6eDn8nV0L7YiVgXGn7">
 
@@ -46,7 +46,8 @@
                         <!-- Name Field -->
                         <div class="col-sm-12">
                             <label for="email">Email:</label>
-                            <input class="form-control" name="email" type="email" id="email" value="" placeholder="Email">
+                            <input class="form-control" name="email" type="text" id="email" value="" placeholder="Email">
+                            <span style="color:red" id="email_err"></span>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -73,7 +74,7 @@
                     <div class="form-group">
                         <div class="col-sm-12">
                             <label for="avatar">Avatar: </label>
-                            <input class="form-control" name="avatar" type="file" onchange="viewImg(this)">
+                            <input class="form-control" name="avatar" type="file" id="avatar" onchange="viewImg(this)">
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -86,7 +87,7 @@
                     <div class="form-group">
                         <!-- Submit Field -->
                         <div class="col-sm-12">
-                            <input class="btn btn-primary" type="submit" name="submit" value="Save">
+                            <input class="btn btn-primary" type="submit" name="submit" value="Save" id="submit">
                             <a href="#" class="btn btn-danger" data-dismiss="modal">Cancel</a>
                         </div>
                         <div class="clearfix"></div>
@@ -96,13 +97,4 @@
         </div>
     </div>
 </div>
-<script>
-    function viewImg(img) {
-        var fileReader = new FileReader;
-        fileReader.onload = function(img) {
-            var avartarShow = document.getElementById("avartar-img-show");
-
-            avartarShow.src = img.target.result
-        }, fileReader.readAsDataURL(img.files[0])
-    }
-</script>
+<script src="js/validate-form.js"></script>

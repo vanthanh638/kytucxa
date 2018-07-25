@@ -3,18 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="21a7a354-6739-4dce-a9d2-bfb5b9b2341d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controller/backend/HopDongController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controller/backend/HopDongController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controller/backend/SinhVienController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controller/backend/SinhVienController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/model/HopDong.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/model/HopDong.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/model/KhuNha.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/model/KhuNha.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/model/Phong.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/model/Phong.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/model/SinhVien.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/model/SinhVien.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/view/backend/hopdong/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/view/backend/hopdong/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/view/backend/layouts/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/view/backend/layouts/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/view/backend/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/view/backend/layouts/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/view/backend/sinhvien/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/view/backend/sinhvien/add.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/view/backend/sinhvien/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/view/backend/sinhvien/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/core/CoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/core/CoreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/core/loader/LibraryLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/core/loader/LibraryLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/library/FileLibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/library/FileLibrary.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/view/backend/sinhvien/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/view/backend/sinhvien/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,16 +34,79 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SinhVien.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/model/SinhVien.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="edit.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/view/backend/sinhvien/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="116" column="27" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="27" />
+            <state relative-caret-position="496">
+              <caret line="126" column="43" lean-forward="true" selection-start-line="126" selection-start-column="43" selection-end-line="126" selection-end-column="43" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/view/backend/sinhvien/add.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-583">
+              <caret line="8" column="113" selection-start-line="8" selection-start-column="113" selection-end-line="8" selection-end-column="113" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/view/backend/layouts/footer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SinhVienController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controller/backend/SinhVienController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="74" column="64" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="validate-form.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/admin/js/validate-form.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,27 +139,29 @@
         <option value="$PROJECT_DIR$/application/view/backend/phong/index.php" />
         <option value="$PROJECT_DIR$/application/controller/backend/SInhVienController.php" />
         <option value="$PROJECT_DIR$/application/controller/backend/PhongController.php" />
-        <option value="$PROJECT_DIR$/application/view/backend/sinhvien/index.php" />
         <option value="$PROJECT_DIR$/application/view/backend/layouts/leftbar.php" />
-        <option value="$PROJECT_DIR$/application/view/backend/layouts/header.php" />
         <option value="$PROJECT_DIR$/application/view/backend/hopdong/index.php" />
-        <option value="$PROJECT_DIR$/application/view/backend/layouts/footer.php" />
         <option value="$PROJECT_DIR$/application/view/backend/hopdong/add.php" />
         <option value="$PROJECT_DIR$/application/view/backend/hopdong/edit.php" />
         <option value="$PROJECT_DIR$/application/controller/backend/HopDongController.php" />
         <option value="$PROJECT_DIR$/application/model/HopDong.php" />
         <option value="$PROJECT_DIR$/application/model/KhuNha.php" />
         <option value="$PROJECT_DIR$/application/model/Phong.php" />
-        <option value="$PROJECT_DIR$/application/model/SinhVien.php" />
         <option value="E:/GMO/GMO/php/MyFramework/MyFramework/application/controller/frontend/AuthController.php" />
-        <option value="$PROJECT_DIR$/application/view/backend/sinhvien/edit.php" />
-        <option value="$PROJECT_DIR$/application/view/backend/sinhvien/add.php" />
         <option value="$PROJECT_DIR$/system/core/CoreController.php" />
         <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/web/admin/index.php" />
         <option value="$PROJECT_DIR$/system/core/loader/LibraryLoader.php" />
         <option value="$PROJECT_DIR$/system/library/FileLibrary.php" />
+        <option value="$PROJECT_DIR$/application/view/backend/sinhvien/index.php" />
+        <option value="$PROJECT_DIR$/application/view/backend/layouts/header.php" />
+        <option value="$PROJECT_DIR$/web/admin/js/validate.js" />
+        <option value="$PROJECT_DIR$/application/model/SinhVien.php" />
+        <option value="$PROJECT_DIR$/application/view/backend/layouts/footer.php" />
         <option value="$PROJECT_DIR$/application/controller/backend/SinhVienController.php" />
+        <option value="$PROJECT_DIR$/application/view/backend/sinhvien/add.php" />
+        <option value="$PROJECT_DIR$/web/admin/js/validate-form.js" />
+        <option value="$PROJECT_DIR$/application/view/backend/sinhvien/edit.php" />
       </list>
     </option>
   </component>
@@ -117,7 +177,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="219" />
     <option name="y" value="32" />
     <option name="width" value="1170" />
@@ -131,7 +191,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -148,6 +207,19 @@
               <item name="kytucxa" type="b2602c69:ProjectViewProjectNode" />
               <item name="kytucxa" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kytucxa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kytucxa" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kytucxa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kytucxa" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -156,6 +228,14 @@
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kytucxa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kytucxa" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kytucxa" type="b2602c69:ProjectViewProjectNode" />
@@ -170,10 +250,24 @@
               <item name="kytucxa" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="kytucxa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kytucxa" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kytucxa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kytucxa" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -186,11 +280,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\kytucxa\web\admin\js" />
       <recent name="C:\xampp\htdocs\kytucxa\web\images\avatar" />
       <recent name="C:\xampp\htdocs\kytucxa\application\view\backend" />
       <recent name="C:\xampp\htdocs\kytucxa\application\config" />
       <recent name="C:\xampp\htdocs\kytucxa\web\admin" />
-      <recent name="C:\xampp\htdocs\kytucxa\applycation\controller\backend" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -221,12 +315,13 @@
       <workItem from="1532056440486" duration="3650000" />
       <workItem from="1532230960610" duration="3559000" />
       <workItem from="1532308183637" duration="13478000" />
-      <workItem from="1532330263129" duration="6220000" />
+      <workItem from="1532330263129" duration="9538000" />
+      <workItem from="1532481701509" duration="10929000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57363000" />
+    <option name="totallyTimeSpent" value="71610000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -238,10 +333,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="219" y="32" width="1170" height="698" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49821427" visible="true" weight="0.22432433" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49821427" visible="true" weight="0.1913767" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32857144" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.500528" side_tool="true" weight="0.32857144" />
@@ -265,19 +360,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18003026" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32933104" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3294893" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -316,10 +411,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/applycation/view/backend/layout/header.php" />
-    <entry file="file://$PROJECT_DIR$/applycation/model/Model.php" />
-    <entry file="file://$PROJECT_DIR$/applycation/model/KhuNhs.php" />
-    <entry file="file://$PROJECT_DIR$/applycation/model/KhuNha.php" />
     <entry file="file://$PROJECT_DIR$/system/core/loader/ViewLoader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -425,20 +516,6 @@
     <entry file="file://E:/GMO/Optics Free Website Template - Free-CSS.com/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/backend/layouts/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/backend/layouts/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/view/backend/hopdong/add.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -471,13 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/core/CoreModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -516,24 +586,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/backend/sinhvien/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/view/backend/layouts/menu.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/model/SinhVien.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="188" selection-start-line="60" selection-start-column="188" selection-end-line="60" selection-end-column="188" />
         </state>
       </provider>
     </entry>
@@ -553,13 +609,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/system/config/config.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/view/backend/sinhvien/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/core/CoreCommon.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -596,13 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controller/backend/SinhVienController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/library/FileLibrary.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -610,10 +652,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/system/core/CoreModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/backend/sinhvien/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/GMO/Java12 VinaEnter/Java12 VinaEnter/Javascrip/baitap/baitapD2/Java12-TranVanThanh-Javascript-D2/BaiTap/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin/js/validate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/backend/layouts/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="53" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin/js/jquery.validate.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/model/SinhVien.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/backend/layouts/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controller/backend/SinhVienController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="74" column="64" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/view/backend/sinhvien/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-583">
+          <caret line="8" column="113" selection-start-line="8" selection-start-column="113" selection-end-line="8" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin/js/validate-form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/view/backend/sinhvien/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="116" column="27" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="27" />
+        <state relative-caret-position="496">
+          <caret line="126" column="43" lean-forward="true" selection-start-line="126" selection-start-column="43" selection-end-line="126" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

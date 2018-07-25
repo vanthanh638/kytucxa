@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="css/skins/skin-blue.min.css">
     <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
