@@ -8,8 +8,6 @@
             <div class="row">
                 <form method="POST" action="index.php?c=sinhvien&a=save" accept-charset="UTF-8" id="form-sinhvien"
                     enctype="multipart/form-data">
-                    <input name="_token" type="hidden" value="OevXx559CuCb66T2XiTa8j6eDn8nV0L7YiVgXGn7">
-
                     <div class="form-group">
                         <!-- Name Field -->
                         <div class="col-sm-6">

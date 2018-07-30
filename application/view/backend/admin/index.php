@@ -17,7 +17,7 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1 class="header">
-                Quản lý hợp đồng
+                Quản lý user
             </h1>
         </section>
         <section class="content">
@@ -39,60 +39,52 @@
                     ?>
                     <div class="box">
                         <div class="box-body">
+                            <h4 class="pull-left">Tìm kiếm</h4>
+                            <button class="pull-right btn" id="toggle-search">
+                                <span class="glyphicon glyphicon-plus" id="plush"></span>
+                            </button>
+                        </div>
+                        <div class="box-body" id="div-search" style="display: none;">
                             <div class="form-group">
-                                <div class="col-sm-2">
-                                    <label>Mã SV</label>
-                                    <input type="text" name="smasv" id="smasv" class="form-control">
+                                <div class="col-sm-3">
+                                    <label>Username</label>
+                                    <input type="text" name="susername" id="susername" class="form-control">
                                 </div>
-                                <div class="col-sm-4">
-                                    <label>Tên sinh viên</label>
-                                    <input type="text" name="stensv" id="stensv" class="form-control">
+                                <div class="col-sm-6">
+                                    <label>Fullname</label>
+                                    <input type="text" name="sfullname" id="sfullname" class="form-control">
                                 </div>
-                                <div class="col-sm-2">
-                                    <label>Lớp</label>
-                                    <input type="text" name="slop" id="slop" class="form-control">
-                                </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <label></label><br>
-                                    <button class="btn btn-primary pull-right" id="search">Tìm kiếm</button>
+                                    <button class="btn btn-primary pull-right" id="search">
+                                        <span class="glyphicon glyphicon-search"></span>Tìm kiếm
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="box">
                         <div class="box-body">
-                            <h4 class="pull-left">Danh sách hợp đồng</h4>
+                            <h4 class="pull-left">Danh sách user</h4>
                             <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" onclick="add()">
-                                Thêm hợp đồng
+                                Thêm user
                             </button>
                         </div>
                         <div class="box-body">
                             <table class="table table-bordered">
                                 <tr>
-                                    <th>Họ tên</th>
-                                    <th>Phòng</th>
-                                    <th>Ngày bắt đầu</th>
-                                    <th>Ngày kết thúc</th>
+                                    <th>Username</th>
+                                    <th>Fullname</th>
                                     <th class="text-center" width="200px">Chức năng</th>
                                 </tr>
-                                <?php foreach ($listHD as $hd): ?>
+                                <?php foreach ($listUser as $user): ?>
                                 <tr>
-                                    <?php foreach ($listSV as $sv):
-                                        if ($sv['MaSV'] == $hd['MaSV']) { ?>
-                                    <td><?php echo $sv['TenSV']; ?></td>
-                                    <?php }
-                                    endforeach; ?>
-                                    <?php foreach ($listPhong as $phong):
-                                        if ($phong['id'] == $hd['idPhong']) { ?>
-                                            <td><?php echo $phong['TenPhong']; ?></td>
-                                        <?php }
-                                    endforeach; ?>
-                                    <td><?php echo $hd['NgayBatDau']; ?></td>
-                                    <td><?php echo $hd['NgayKetThuc']; ?></td>
+                                    <td><?php echo $user['username']; ?></td>
+                                    <td><?php echo $user['fullname']; ?></td>
                                     <td class="text-center">
                                       <div class="btn-group">
-                                          <a onclick="edit(<?php echo $hd['id'] ?>)" href="#" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-edit"></i> Edit</a>
-                                          <a href="index.php?c=hopdong&a=delete&id=<?php echo $hd['id']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+                                          <a onclick="edit(<?php echo $user['id'] ?>)" href="#" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-edit"></i> Edit</a>
+                                          <a href="index.php?c=phong&a=delete&id=<?php echo $user['id']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i> Delete</a>
                                       </div>
                                   </td>
                                 </tr>
@@ -113,7 +105,7 @@
     <script>
         function edit(id) {
             $.ajax({
-                url: 'index.php?c=hopdong&a=edit',
+                url: 'index.php?c=user&a=edit',
                 type: 'get',
                 data:{id: id},
                 success:function(result){
@@ -123,15 +115,20 @@
         }
         function add() {
             $.ajax({
-                url: 'index.php?c=hopdong&a=add',
+                url: 'index.php?c=user&a=add',
                 type: 'get',
-                data:{id: null},
+                data:{},
                 success:function(result){
-                    console.log(result);
                     $('#myModal').html(result);
                 }
             });
         }
+        $(document).ready(function(){
+            $("#toggle-search").click(function() {
+                $("#div-search").toggle();
+                $('#plush').toggleClass('glyphicon-plus glyphicon-minus');
+            });
+        });
     </script>
 
 <?php require_once(PATH_APPLICATION.'/view/backend/layouts/footer.php'); ?>

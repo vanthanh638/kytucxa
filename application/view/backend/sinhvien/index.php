@@ -40,24 +40,24 @@
                     ?>
                     <div class="box">
                         <div class="box-body">
-                                <div class="form-group">
-                                    <div class="col-sm-2">
-                                        <label>Mã SV</label>
-                                        <input type="text" name="smasv" id="smasv" class="form-control">
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <label>Tên sinh viên</label>
-                                        <input type="text" name="stensv" id="stensv" class="form-control">
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <label>Lớp</label>
-                                        <input type="text" name="slop" id="slop" class="form-control">
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <label></label><br>
-                                        <button class="btn btn-primary pull-right" id="search">Tìm kiếm</button>
-                                    </div>
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <label>Mã SV</label>
+                                    <input type="text" name="smasv" id="smasv" class="form-control">
                                 </div>
+                                <div class="col-sm-4">
+                                    <label>Tên sinh viên</label>
+                                    <input type="text" name="stensv" id="stensv" class="form-control">
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Lớp</label>
+                                    <input type="text" name="slop" id="slop" class="form-control">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label></label><br>
+                                    <button class="btn btn-primary pull-right" id="search">Tìm kiếm</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="box">
@@ -152,7 +152,6 @@
                 type: 'get',
                 data:{id: null},
                 success:function(result){
-                    console.log(result);
                     $('#myModal').html(result);
                 }
             });

@@ -5,20 +5,20 @@
     <ul class="nav navbar-nav">
         <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-<!--                --><?php //if ( $_SESSION['infoAdmin']['avatar'] != '' ) { ?>
-<!--                    <img src="../images/avatar/--><?php //echo $_SESSION['infoAdmin']['avatar']; ?><!--" class="user-image" alt="User Image">-->
-<!--                --><?php //} else { ?>
+                <?php if ( $_SESSION['infoAdmin']['avatar'] != '' ) { ?>
+                    <img src="../images/avatar/<?php echo $_SESSION['infoAdmin']['avatar']; ?>" class="user-image" alt="User Image">
+                <?php } else { ?>
                     <img src="img/user2-160x160.jpg" class="user-image" alt="User Image">
-<!--                --><?php //} ?>
-                <span class="hidden-xs"><?php echo 'Admin'?></span>
+                <?php } ?>
+                <span class="hidden-xs"><?php echo $_SESSION['infoAdmin']['fullname'] ?></span>
             </a>
             <ul class="dropdown-menu">
                 <li class="user-header">
-<!--                    --><?php //if ( $_SESSION['infoAdmin']['avatar'] != '' ) { ?>
-<!--                        <img src="../images/avatar/--><?php //echo $_SESSION['infoAdmin']['avatar']; ?><!--" class="img-circle" alt="User Image">-->
-<!--                    --><?php //} else { ?>
+                    <?php if ( $_SESSION['infoAdmin']['avatar'] != '' ) { ?>
+                        <img src="../images/avatar/<?php echo $_SESSION['infoAdmin']['avatar']; ?>" class="img-circle" alt="User Image">
+                    <?php } else { ?>
                         <img src="img/user2-160x160.jpg" class="img-circle" alt="User Image">
-<!--                    --><?php //} ?>
+                    <?php } ?>
                     <p>
                         <?php echo $_SESSION['infoAdmin']['fullname'];?>
                     </p>

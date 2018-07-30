@@ -88,20 +88,22 @@ class SinhVien extends Model
         return $stmt->execute();
     }
 
-    public static function search($request)
+    public static function search($request, $offset)
     {
         $conn = Model::getInstance();
-        $sql = "SELECT * FROM sinhvien WHERE TenSV LIKE :tenSV AND Lop LIKE :lop";
+        $sql = 'SELECT * FROM sinhvien WHERE TenSV LIKE :tenSV AND Lop LIKE :lop';
+        $pageSize = PAGE_SIZE;
         if ($request['masv'] != null) {
             $masv = $request['masv'];
-            $sql." AND MaSV = $masv";
+            $sql .= ' AND MaSV = '. (int)$masv;
         }
-
+        $sql .= " LIMIT $offset, $pageSize";
         $stmt = $conn->prepare($sql);
         $data = [
             'tenSV' => '%'.$request['tensv'].'%',
             'lop'   => '%'.$request['lop'].'%',
         ];
+        echo "<script>console.log( 'Debug Objects: " . $sql . "' );</script>";
         $stmt->execute($data);
         $listSV = [];
         foreach ($stmt->fetchAll() as $sinhvien) {
@@ -131,5 +133,22 @@ class SinhVien extends Model
             $listSV[] = $sinhvien;
         }
         return $listSV;
+    }
+
+    public static function getRowCount($request)
+    {
+        $conn = Model::getInstance();
+        $sql = 'SELECT * FROM sinhvien WHERE TenSV LIKE :tenSV AND Lop LIKE :lop';
+        if ($request['masv'] != null) {
+            $masv = $request['masv'];
+            $sql .= ' AND MaSV = '. (int)$masv;
+        }
+        $stmt = $conn->prepare($sql);
+        $data = [
+            'tenSV' => '%'.$request['tensv'].'%',
+            'lop'   => '%'.$request['lop'].'%',
+        ];
+
+        return $stmt->rowCount( $stmt->execute($data));
     }
 }

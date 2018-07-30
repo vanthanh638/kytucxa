@@ -4,12 +4,17 @@ require_once (PATH_APPLICATION.'/model/Phong.php');
 
 class SinhVienController extends BaseController
 {
+    public function __construct()
+    {
+        parent::__construct();
+        if (! AuthController::checkAdminlogin() ) {
+            header('location:index.php?c=auth&a=login');
+            exit();
+        }
+    }
     public function index()
     {
         $page = empty($_GET['p']) ? 1 : $_GET['p'];
-        if ($page == '') {
-            $page = 1;
-        }
         $cPage = ceil(SinhVien::getCount()/PAGE_SIZE);
         $listSV = SinhVien::getByPage($page);
         $data = [
@@ -124,9 +129,14 @@ class SinhVienController extends BaseController
     public function search()
     {
         $request = $_POST;
-        $listSV = SinhVien::search($request);
+        $page = empty($_POST['p']) ? 1 : $_POST['p'];
+        $cPage = ceil(SinhVien::getRowCount($request)/PAGE_SIZE);
+        $offset = ($page - 1) * PAGE_SIZE;
+        $listSV = SinhVien::search($request, $offset);
         $data = [
             'listSV' => $listSV,
+            'cPage'  => $cPage,
+            'page'   => $page,
         ];
         $data = array_merge($data, $this->data);
         $this->view->load('/backend/sinhvien/list', $data);

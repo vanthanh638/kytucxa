@@ -16,13 +16,9 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            <h1 class="pull-left">
-                Quản lý user
-                <small>Danh sách khu nhà</small>
+            <h1 class="header">
+                Quản lý khu nhà
             </h1>
-            <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" onclick="addKhuNha()">
-                Thêm khu nhà
-            </button>
         </section>
         <section class="content">
             <div class="row">
@@ -41,6 +37,34 @@
                     endif
                     ?>
                     <div class="box">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <label>Mã SV</label>
+                                    <input type="text" name="smasv" id="smasv" class="form-control">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>Tên sinh viên</label>
+                                    <input type="text" name="stensv" id="stensv" class="form-control">
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Lớp</label>
+                                    <input type="text" name="slop" id="slop" class="form-control">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label></label><br>
+                                    <button class="btn btn-primary pull-right" id="search">Tìm kiếm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-body">
+                            <h4 class="pull-left">Danh sách khu nhà</h4>
+                            <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" onclick="addKhuNha()">
+                                Thêm khu nhà
+                            </button>
+                        </div>
                         <div class="box-body">
                             <table class="table table-bordered">
                                 <tr>

@@ -3,6 +3,14 @@ require_once (PATH_APPLICATION.'/model/KhuNha.php');
 
 class KhuNhaController extends BaseController
 {
+    public function __construct()
+    {
+        parent::__construct();
+        if (! AuthController::checkAdminlogin() ) {
+            header('location:index.php?c=auth&a=login');
+            exit();
+        }
+    }
     public function index()
     {
         $listKhuNha = KhuNha::getAll();

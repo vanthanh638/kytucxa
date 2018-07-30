@@ -5,6 +5,14 @@ require_once (PATH_APPLICATION.'/model/Phong.php');
 
 class HopDongController extends BaseController
 {
+    public function __construct()
+    {
+        parent::__construct();
+        if (! AuthController::checkAdminlogin() ) {
+            header('location:index.php?c=auth&a=login');
+            exit();
+        }
+    }
     public function index()
     {
         $listHD    = HopDong::getAll();
@@ -29,6 +37,26 @@ class HopDongController extends BaseController
         ];
         $this->view->load('backend/hopdong/add', $data);
         $this->view->show();
+    }
+
+    public function delete()
+    {
+        $id = $_GET['id'];
+        if (HopDong::checkExist($id)) {
+            if (HopDong::delete($id)) {
+                $_SESSION['success'] = 'Xóa thành công';
+                header('location:index.php?c=phong');
+                exit();
+            } else {
+                $_SESSION['danger'] = 'Xóa thất bại';
+                header('location:index.php?c=phong');
+                exit();
+            }
+        } else {
+            $_SESSION['danger'] = 'Không tồn tại phòng';
+            header('location:index.php?c=phong');
+            exit();
+        }
     }
 
     public function save()

@@ -29,4 +29,23 @@ class HopDong extends Model
         ];
         return $stmt->execute($data);
     }
+
+    public static function checkExist($id)
+    {
+        $conn = Model::getInstance();
+        $stmt = $conn->query("SELECT * FROM hopdong WHERE id = $id");
+        $result = $stmt->fetch();
+        if ($result !== false) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static function delete($id)
+    {
+        $conn = Model::getInstance();
+        $stmt = $conn->prepare("DELETE FROM hopdong WHERE id = $id");
+        return $stmt->execute();
+    }
 }

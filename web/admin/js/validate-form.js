@@ -12,7 +12,7 @@ $(document).ready(function() {
                 required: true,
             },
             "re_password": {
-                equalTo: "#password"
+                equalTo: "#password",
             },
             "TenSV": {
                 required: true,
@@ -42,6 +42,38 @@ $(document).ready(function() {
     });
     $("#email").keyup(function() {
         validateEmail();
+    });
+    $('#form-user').validate({
+        rules: {
+            "username": {
+                required: true,
+            },
+            "password": {
+                minlength: 6,
+                required: true,
+            },
+            "re_password": {
+                equalTo: "#password",
+            },
+            "fullname": {
+                required: true,
+            },
+        },
+        messages: {
+            "username": {
+                required: "<span style=\"color:red\" >  Nhập username..! </span>",
+            },
+            "password": {
+                minlength: "<span style=\"color:red\" >  Nhập password ít nhất 6 ký tự..! </span>",
+                required: "<span style=\"color:red\" > Nhập password..! </span>",
+            },
+            "re_password": {
+                equalTo: "<span style=\"color:red\" >  Mật khẩu không trùng khớp..! </span>",
+            },
+            "fullname": {
+                required: "<span style=\"color:red\" > Nhập fullname..! </span>",
+            },
+        },
     });
 });
 function validateEmail() {

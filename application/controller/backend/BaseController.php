@@ -1,4 +1,5 @@
 <?php
+require_once (PATH_APPLICATION . '/controller/backend/AuthController.php');
 
 class BaseController extends CoreController{
     public $data;

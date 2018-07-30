@@ -16,13 +16,10 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            <h1 class="pull-left">
+            <h1 class="header">
                 Quản lý phòng
-                <small>Danh sách phòng</small>
             </h1>
-            <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" onclick="add()">
-                Thêm phòng
-            </button>
+
         </section>
         <section class="content">
             <div class="row">
@@ -42,6 +39,43 @@
                     endif
                     ?>
                     <div class="box">
+                        <div class="box-body">
+                            <h4 class="pull-left">Tìm kiếm</h4>
+                            <button class="pull-right btn" id="toggle-search">
+                                <span class="glyphicon glyphicon-plus" id="plush"></span>
+                            </button>
+                        </div>
+                        <div class="box-body" id="div-search" style="display: none;">
+                            <div class="form-group">
+                                <div class="col-sm-3">
+                                    <label>Phòng</label>
+                                    <input type="text" name="smasv" id="smasv" class="form-control">
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="IdKhuNha">Khu nhà</label>
+                                    <select class="form-control" name="IdKhuNha">
+                                        <option value="0">Tất cả</option>
+                                        <?php foreach ($listKhuNha as $khuNha): ?>
+                                            <option value="<?php echo $khuNha['id'] ?>"><?php echo $khuNha['TenKhuNha'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label></label><br>
+                                    <button class="btn btn-primary pull-right" id="search">
+                                        <span class="glyphicon glyphicon-search"></span>Tìm kiếm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-body">
+                            <h4 class="pull-left">Danh sách phòng</h4>
+                            <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" onclick="add()">
+                                Thêm phòng
+                            </button>
+                        </div>
                         <div class="box-body">
                             <table class="table table-bordered">
                                 <tr>
@@ -106,6 +140,13 @@
                 }
             });
         }
+        $(document).ready(function(){
+            $("#toggle-search").click(function() {
+                $("#div-search").toggle();
+                $('#plush').toggleClass('glyphicon-plus glyphicon-minus');
+
+            });
+        });
     </script>
 
 <?php require_once(PATH_APPLICATION.'/view/backend/layouts/footer.php'); ?>
